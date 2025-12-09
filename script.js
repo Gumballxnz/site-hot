@@ -1,13 +1,10 @@
-// Swiper initialization - Netflix Style
+// Swiper initialization - Netflix Style com animação visível
 const swiper = new Swiper('.swiper', {
     loop: true,
-    effect: 'fade',
-    fadeEffect: {
-        crossFade: true
-    },
-    speed: 800,
+    effect: 'slide',
+    speed: 600,
     autoplay: {
-        delay: 6000,
+        delay: 8000,
         disableOnInteraction: false,
         pauseOnMouseEnter: true,
     },
@@ -15,6 +12,29 @@ const swiper = new Swiper('.swiper', {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
     },
+    on: {
+        slideChange: function () {
+            // Otimização: pausar vídeos que não estão visíveis
+            const videos = document.querySelectorAll('.swiper-slide video');
+            videos.forEach((video, index) => {
+                if (index === this.realIndex) {
+                    video.play().catch(e => console.log('Autoplay blocked'));
+                } else {
+                    video.pause();
+                }
+            });
+        },
+        init: function () {
+            // Na inicialização, pausar todos exceto o primeiro
+            const videos = document.querySelectorAll('.swiper-slide video');
+            videos.forEach((video, index) => {
+                if (index !== 0) {
+                    video.pause();
+                    video.removeAttribute('autoplay');
+                }
+            });
+        }
+    }
 });
 
 // Scroll event for top bar
@@ -27,26 +47,32 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Video controls
+// Video controls with FontAwesome icons
 const videoPlayers = document.querySelectorAll('.video-player');
 const playPauseButtons = document.querySelectorAll('.btnPlayPause');
 const muteUnmuteButtons = document.querySelectorAll('.btnMuteUnmute');
 
 videoPlayers.forEach((video, index) => {
-    playPauseButtons[index].addEventListener('click', () => {
-        if (video.paused) {
-            video.play();
-            playPauseButtons[index].textContent = 'Pause';
-        } else {
-            video.pause();
-            playPauseButtons[index].textContent = 'Play';
-        }
-    });
+    if (playPauseButtons[index]) {
+        playPauseButtons[index].addEventListener('click', () => {
+            if (video.paused) {
+                video.play();
+                playPauseButtons[index].innerHTML = '<i class="fas fa-pause"></i>';
+            } else {
+                video.pause();
+                playPauseButtons[index].innerHTML = '<i class="fas fa-play"></i>';
+            }
+        });
+    }
 
-    muteUnmuteButtons[index].addEventListener('click', () => {
-        video.muted = !video.muted;
-        muteUnmuteButtons[index].textContent = video.muted ? 'Unmute' : 'Mute';
-    });
+    if (muteUnmuteButtons[index]) {
+        muteUnmuteButtons[index].addEventListener('click', () => {
+            video.muted = !video.muted;
+            muteUnmuteButtons[index].innerHTML = video.muted
+                ? '<i class="fas fa-volume-mute"></i>'
+                : '<i class="fas fa-volume-up"></i>';
+        });
+    }
 });
 
 function openPopup(url) {
