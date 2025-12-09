@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const muteUnmuteBtn = document.getElementById("muteUnmuteBtn");
 
     const videoSources = [
-        "../Previas-pc4/Vid/principal.mov",
+        "https://res.cloudinary.com/dm3glrwax/video/upload/v1/Netflix-foda/SubPacks/Previas-pc4/Vid/principal.mov",
        
        
     ];

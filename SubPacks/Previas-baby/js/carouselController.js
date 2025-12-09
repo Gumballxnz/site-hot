@@ -1,8 +1,8 @@
 
 const videoSources = [
-    "../Previas-baby/Vid/Vid1.MP4",
-    "../Previas-baby/Vid/Vid2.MP4",
-    "../Previas-baby/Vid/Vid3.MP4",
+    "https://res.cloudinary.com/dm3glrwax/video/upload/v1/Netflix-foda/SubPacks/Previas-baby/Vid/Vid1.MP4",
+    "https://res.cloudinary.com/dm3glrwax/video/upload/v1/Netflix-foda/SubPacks/Previas-baby/Vid/Vid2.MP4",
+    "https://res.cloudinary.com/dm3glrwax/video/upload/v1/Netflix-foda/SubPacks/Previas-baby/Vid/Vid3.MP4",
 ];
 
 const carousel = document.querySelector('.carousel');

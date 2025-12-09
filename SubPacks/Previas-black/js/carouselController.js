@@ -1,8 +1,8 @@
 
 const videoSources = [
-   "../Previas-black/Vid/vid1.mp4",
+   "https://res.cloudinary.com/dm3glrwax/video/upload/v1/Netflix-foda/SubPacks/Previas-black/Vid/vid1.mp4",
     "https://res.cloudinary.com/dm3glrwax/video/upload/v1765282435/Netflix-foda/SubPacks/Previas-black/Vid/vid4.mp4",
-    "../Previas-black/Vid/vid3.mp4",
+    "https://res.cloudinary.com/dm3glrwax/video/upload/v1/Netflix-foda/SubPacks/Previas-black/Vid/vid3.mp4",
 ];
 
 const carousel = document.querySelector('.carousel');
