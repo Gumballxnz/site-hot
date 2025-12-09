@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
   
     const videoSources = [
-        "https://res.cloudinary.com/dm3glrwax/video/upload/v1765282062/Netflix-foda/SubPacks/Previas-ash/Vid/vid2.mp4",
-        "https://res.cloudinary.com/dm3glrwax/video/upload/v1765282186/Netflix-foda/SubPacks/Previas-ash/Vid/video.mp4",
-        "https://res.cloudinary.com/dm3glrwax/video/upload/v1765282149/Netflix-foda/SubPacks/Previas-ash/Vid/vid3.mp4",
+        "https://res.cloudinary.com/dm3glrwax/video/upload/v1765304022/SubPacks/Previas-ash/Vid/vid2.mp4",
+        "https://res.cloudinary.com/dm3glrwax/video/upload/v1765304035/SubPacks/Previas-ash/Vid/video.mp4",
+        "https://res.cloudinary.com/dm3glrwax/video/upload/v1765304030/SubPacks/Previas-ash/Vid/vid3.mp4",
         
     ];
 

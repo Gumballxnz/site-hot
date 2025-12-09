@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
   
     const videoSources = [
-     "https://res.cloudinary.com/dm3glrwax/video/upload/v1765282567/Netflix-foda/SubPacks/Previas-cp1/Vid/vid3.mp4",
-    "https://res.cloudinary.com/dm3glrwax/video/upload/v1765282508/Netflix-foda/SubPacks/Previas-cp1/Vid/vid2.mp4",
-    "https://res.cloudinary.com/dm3glrwax/video/upload/v1765282479/Netflix-foda/SubPacks/Previas-cp1/Vid/vid1.mp4",
+     "https://res.cloudinary.com/dm3glrwax/video/upload/v1765304108/SubPacks/Previas-cp1/Vid/vid3.mp4",
+    "https://res.cloudinary.com/dm3glrwax/video/upload/v1765304101/SubPacks/Previas-cp1/Vid/vid2.mp4",
+    "https://res.cloudinary.com/dm3glrwax/video/upload/v1765304098/SubPacks/Previas-cp1/Vid/vid1.mp4",
     ];
 
     const carousel = document.querySelector('.carousel');
