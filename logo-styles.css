@@ -1,0 +1,32 @@
+/* Logo Styles */
+.site-logo {
+    max-width: 300px;
+    width: 80%;
+    height: auto;
+    display: block;
+    margin: 0 auto 20px auto;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.5));
+}
+
+.carousel-title {
+    text-align: center;
+    padding-top: 20px;
+    margin-bottom: 20px;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    width: 100%;
+}
+
+.carousel-title h1 {
+    display: none;
+    /* Hide text if still present */
+}
+
+/* Adjust Hero Image Container */
+.hero-image-container {
+    height: 600px;
+    /* Taller hero */
+}
