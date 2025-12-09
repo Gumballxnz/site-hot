@@ -30,7 +30,9 @@ const swiper = new Swiper('.swiper', {
             videos.forEach((video, index) => {
                 if (index !== 0) {
                     video.pause();
-                    video.removeAttribute('autoplay');
+                } else {
+                    // Tocar o primeiro vídeo
+                    video.play().catch(e => console.log('Autoplay blocked by browser'));
                 }
             });
         }

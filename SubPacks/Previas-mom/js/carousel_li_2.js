@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const videoSources = [
         "https://res.cloudinary.com/dm3glrwax/video/upload/v1765304417/SubPacks/Previas-mom/Vid/vid1.mp4",
         "https://res.cloudinary.com/dm3glrwax/video/upload/v1765304417/SubPacks/Previas-mom/Vid/vid1.mp4",
-        "https://res.cloudinary.com/dm3glrwax/video/upload/v1765304411/SubPacks/Previas-mom/Vid/principal.MP4.mp4",
+        "https://res.cloudinary.com/dm3glrwax/video/upload/v1765304411/SubPacks/Previas-mom/Vid/principal.mp4",
     ];
 
     const carousel = document.querySelector('.carousel');

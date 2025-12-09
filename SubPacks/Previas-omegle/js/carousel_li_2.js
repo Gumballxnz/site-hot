@@ -2,8 +2,8 @@ document.addEventListener("DOMContentLoaded", () => {
   
     const videoSources = [
         "https://res.cloudinary.com/dm3glrwax/video/upload/v1765304439/SubPacks/Previas-omegle/Vid/vid1.mp4",
-        "https://res.cloudinary.com/dm3glrwax/video/upload/v1765304450/SubPacks/Previas-omegle/Vid/vid2.MP4.mp4",
-        "https://res.cloudinary.com/dm3glrwax/video/upload/v1765304430/SubPacks/Previas-omegle/Vid/principal.MP4.mp4",
+        "https://res.cloudinary.com/dm3glrwax/video/upload/v1765304450/SubPacks/Previas-omegle/Vid/vid2.mp4",
+        "https://res.cloudinary.com/dm3glrwax/video/upload/v1765304430/SubPacks/Previas-omegle/Vid/principal.mp4",
    
     ];
 
