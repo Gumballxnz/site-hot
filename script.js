@@ -323,3 +323,23 @@ function initiateBinance() {
         closePaymentModal();
     }, 1500);
 }
+
+// Dynamic Title Logic
+const originalTitle = 'NetflixHub';
+const bestsellersTitle = 'NetflixHub - Top Teens: Best sellers+';
+
+const titleObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            document.title = bestsellersTitle;
+        } else {
+            document.title = originalTitle;
+        }
+    });
+}, { threshold: 0.1 });
+
+const bestsellersSection = document.getElementById('bestsellers');
+if (bestsellersSection) {
+    titleObserver.observe(bestsellersSection);
+}
+

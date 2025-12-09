@@ -279,20 +279,17 @@ h1 {
 /* Responsividade para Mobile */
 @media screen and (max-width: 768px) {
   .cards {
-    display: flex;
-    /* Volta para flex no mobile para scroll lateral se preferir, ou grid coluna única */
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    /* Grid menor no mobile */
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 colunas fixas */
     gap: 15px;
+    overflow-x: visible;
+    padding: 10px;
   }
 
   .card {
-    min-width: 160px;
-    /* Largura fixa no scroll horizontal */
-    max-width: 160px;
-    scroll-snap-align: start;
+    min-width: auto;
+    max-width: 100%;
   }
 }
 
@@ -593,6 +590,18 @@ h1 {
   text-transform: uppercase;
   letter-spacing: 5px;
   text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.8);
+}
+
+/* Responsividade para o logo */
+@media (max-width: 768px) {
+  .logo {
+    font-size: 3rem;
+    /* Reduz de 6rem para 3rem no mobile */
+  }
+
+  .logo-container {
+    padding: 10px;
+  }
 }
 
 /* Circular loading spinner */

@@ -64,3 +64,5 @@ O arquivo `vercel.json` ajuda o Vercel a lidar com rotas se necessário, mas com
 - [ ] `vercel.json` atualizado
 
 **Sucesso!** 🚀 Se der algum erro, verifique se o "Root Directory" foi configurado corretamente para `Netflix-foda`.
+
+
