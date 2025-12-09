@@ -280,27 +280,46 @@ window.onclick = function (event) {
 }
 
 /* API Checkout Logic */
-function initiateCheckout() {
-    const apiKey = 'rbz_4796cf3a0a295a4857cc6f5c04d12751';
+// PayPal Integration
+function initiatePayPal() {
+    const apiKey = "rbz_4796cf3a0a295a4857cc6f5c04d12751";
 
-    // Simulating API Call / PayPal Redirect
     const btn = document.querySelector('.btn-paypal');
     const originalText = btn.innerHTML;
+
+    // Prevent double binding if user clicks fast
+    if (btn.disabled) return;
 
     btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processando...';
     btn.disabled = true;
 
     setTimeout(() => {
-        // Here we would use the specific API logic.
-        // Since "rbz" is likely RazorPay or custom, we verify key.
-        console.log(`Checking out: ${currentItem} ($${currentPrice}) | API: ${apiKey}`);
-
-        // Mock success for UI feedback
-        alert(`Iniciando pagamento seguro para: ${currentItem}\nVia PayPal/Cartão.\n(Integração API Key: ${apiKey.substring(0, 8)}...)`);
+        // Here we use the API Key 'rbz_...' as requested.
+        // In a real scenario, this would POST to a backend or redirect to a payment gateway.
+        console.log(`Connect to API ${apiKey} for Item: ${currentItem} Price: ${currentPrice}`);
+        alert(`Redirecionando para PayPal/Card Gateway...\n\nItem: ${currentItem}\nPreço: $${currentPrice}\nAPI Key: ${apiKey}\n\n(Simulação de Checkout Seguro)`);
 
         btn.innerHTML = originalText;
         btn.disabled = false;
         closePaymentModal();
+    }, 1500);
+}
 
+// Binance Integration
+function initiateBinance() {
+    const btn = document.querySelector('.btn-binance');
+    const originalText = btn.innerHTML;
+
+    if (btn.disabled) return;
+
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Gerando...';
+    btn.disabled = true;
+
+    setTimeout(() => {
+        alert(`Pagamento via Binance:\n\nPara o item "${currentItem}" ($${currentPrice}).\n\nPor favor envie o pagamento para a carteira oficial e envie o comprovante.`);
+
+        btn.innerHTML = originalText;
+        btn.disabled = false;
+        closePaymentModal();
     }, 1500);
 }

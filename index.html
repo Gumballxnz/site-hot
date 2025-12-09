@@ -23,6 +23,10 @@
                     <h1>Início</h1>
                 </div>
                 <!-- Conteúdo do carrossel -->
+                <div class="hero-image-container">
+                    <img src="background-premium.png" alt="Hero Background" class="hero-bg">
+                    <div class="hero-overlay"></div>
+                </div>
             </div>
             <div class="swiper">
                 <div class="swiper-wrapper">
@@ -283,6 +287,8 @@
                 <div class="card-content">
                     <h2>9</h2>
                     <span>Darkzadie</span>
+                    <button class="buy-btn" onclick="openPaymentModal('Darkzadie', '25.00', event)">Comprar -
+                        $25.00</button>
                 </div>
             </div>
 
@@ -557,13 +563,18 @@
             <div class="modal-content">
                 <span class="close-modal" onclick="closePaymentModal()">&times;</span>
                 <h2 id="modalItemName">Premium Content</h2>
-                <p>Tenha acesso vitalício agora.</p>
+                <p>Selecione a opção de pagamento</p>
                 <div class="price" id="modalPrice">$30.00</div>
-                <p style="color: #888; font-size: 0.9rem;">Pagamento seguro via API (PayPal/Card)</p>
-
-                <button class="btn-paypal" onclick="initiateCheckout()">
-                    <i class="fab fa-paypal"></i> Pagar Agora
-                </button>
+                
+                <div class="payment-options">
+                    <button class="btn-option btn-paypal" onclick="initiatePayPal()">
+                        <i class="fab fa-paypal"></i> Pague com PayPal ou cartão
+                    </button>
+                    
+                    <button class="btn-option btn-binance" onclick="initiateBinance()">
+                        <i class="fab fa-bitcoin"></i> Pague com Binance
+                    </button>
+                </div>
             </div>
         </div>
 
