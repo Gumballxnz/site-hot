@@ -1,6 +1,16 @@
-// Swiper initialization
+// Swiper initialization - Netflix Style
 const swiper = new Swiper('.swiper', {
     loop: true,
+    effect: 'fade',
+    fadeEffect: {
+        crossFade: true
+    },
+    speed: 800,
+    autoplay: {
+        delay: 6000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+    },
     navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
@@ -140,43 +150,7 @@ document.querySelectorAll('.indicator').forEach((indicator, index) => {
     });
 });
 
-swiper.params = {
-    ...swiper.params, // Preserva suas configurações originais
-    loop: true, // Repetição infinita
-    slidesPerView: 'auto', // Tamanho dinâmico dos slides
-    centeredSlides: true, // Centraliza o slide ativo
-    grabCursor: true, // Cursor interativo
-
-    // Adiciona transições no estilo Apple
-    effect: 'coverflow', // Ativa o efeito Coverflow
-    coverflowEffect: {
-        rotate: 50, // Rotação dos slides
-        stretch: 0, // Distância extra entre slides
-        depth: 100, // Profundidade para o efeito 3D
-        modifier: 1, // Intensidade do efeito
-        slideShadows: true, // Sombras nos slides
-    },
-
-    autoplay: {
-        delay: 3000, // Tempo entre os slides
-        disableOnInteraction: false, // Continua após interação
-    },
-
-    pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-    },
-
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-    },
-
-    speed: 800, // Velocidade da transição
-};
-
-// Atualiza o Swiper
-swiper.update();
+// Swiper já configurado no início com efeito fade
 
 // Seleciona o título
 const title = document.querySelector('.carousel-title');
