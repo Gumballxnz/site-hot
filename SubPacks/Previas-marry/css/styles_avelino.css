@@ -1,0 +1,305 @@
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 60px;
+    background: #111;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.sidebar img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+
+/* Fixed top bar on scroll */
+.top-bar {
+    position: fixed;
+    top: -50px;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: top 0.3s ease;
+    filter: blur(0.5);
+}
+
+.top-bar.show {
+    top: 0;
+}
+
+.main-content h1 {
+    text-align: center;
+    position: fixed;
+    position: relative;
+}
+
+.top-bar b {
+    color: #007AFF;
+}
+
+/* Controles */
+.control-button {
+    background: rgba(0, 0, 0, 0.6);
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.2s;
+}
+
+.control-button:hover {
+    transform: scale(1.1);
+}
+
+.progress-bar-container {
+    flex: 1;
+}
+
+.progress-bar {
+    width: 100%;
+    appearance: none;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.progress-bar::-webkit-slider-thumb {
+    appearance: none;
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    border-radius: 50%;
+}
+
+/* Botões de Navegação */
+.nav-buttons {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+    transform: translateY(-50%);
+}
+
+.nav-button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.8rem;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.2s;
+}
+
+.nav-button:hover {
+    transform: scale(1.1);
+}
+
+/* Pop-up */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.popup-content h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.apple-button {
+    display: block;
+    width: 90%;
+    max-width: 300px;
+    padding: 15px 20px;
+    margin: 10px auto;
+    border: none;
+    border-radius: 15px;
+    background: linear-gradient(180deg, #e5e5e5, #d4d4d4);
+    color: #000;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.apple-button:hover {
+    background: linear-gradient(180deg, #d4d4d4, #b5b5b5);
+    transform: scale(1.03);
+}
+
+.close-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #ff3b30;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.close-btn:hover {
+    background: #d22b24;
+}
+
+/* Botão estilo Apple para voltar */
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 16px;
+    background: none;
+    color: #1e88f3;
+    font-family: -apple-system, BlinkMacSystemFont, "San Francisco", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.2s ease-in-out;
+    z-index: 20;
+    text-shadow: 1px 1px 1px #01070ec1;
+}
+
+.back-button:hover {
+    opacity: 0.7;
+}
+
+.back-button i {
+    margin-right: 8px;
+    font-size: 18px;
+}
+
+.bt {
+    margin: 50px 0px;
+    padding: 12px 24px;
+    background: rgba(255, 255, 255, 0.95);
+    color: #000;
+    font-family: -apple-system, BlinkMacSystemFont, "San Francisco", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 4px;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s ease-in-out, transform 0.2s ease-in-out;
+    z-index: 10;
+    width: 100%;
+}
+
+.carousel-items1 {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+.carousel-items1::-webkit-scrollbar {
+    height: 8px;
+}
+
+.carousel-items1::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: 5px;
+}
+
+.carousel-item1 {
+    flex: 0 0 200px;
+    height: 300px;
+    background: #333;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 18px;
+}
+
+.carousel-item1:hover {
+    transform: scale(1.05);
+    transition: 0.3s;
+}
+
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 20px;
+    background-color: #e2d7d7ce;
+    color: #fff;
+    text-shadow: 1px 1px 1px #292828;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: -apple-system, BlinkMacSystemFont, "San Francisco", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 2;
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+    font-weight: 600;
+    filter: blur(1);
+}
+
+.play-button:hover {
+    opacity: 1;
+}
