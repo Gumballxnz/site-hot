@@ -129,18 +129,26 @@
 }
 
 .pack_price {
-    background-color: #ffffff;
-    border-radius: 6px;
-    padding: 10px 20px;
+    background-color: #e50914;
+    border-radius: 8px;
+    padding: 12px 24px;
     display: flex;
     text-align: center;
     align-items: center;
     justify-content: center;
     width: fit-content;
-    color: black;
-    font-weight: bold;
-    font-size: 17px;
-    box-shadow:  1px 0.4px 4x rgb(83, 83, 83);
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+    box-shadow: 0 4px 12px rgba(229, 9, 20, 0.4);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.pack_price:hover {
+    background-color: #f40612;
+    transform: scale(1.02);
+    box-shadow: 0 6px 16px rgba(229, 9, 20, 0.5);
 }
 
 .controls {
