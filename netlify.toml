@@ -1,0 +1,24 @@
+[build]
+  publish = "."
+  command = ""
+
+# Redirecionar index.html para / para URL limpa
+[[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 301
+  force = true
+
+# Garantir que outras rotas funcionem (SPA fallback se necessário, mas site é estático)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
