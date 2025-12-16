@@ -99,3 +99,12 @@
   }
   
                                                         
+
+/* Loading state fix */
+body {
+    background-color: #000 !important;
+}
+
+.video_model {
+    background-color: #000;
+}

@@ -247,77 +247,136 @@
         object-fit: cover;
     }
 }
-/* ===== MOBILE RESPONSIVENESS FIX ===== */
-@media (max-width: 480px) {
-    .carousel_li_footbar {
-        bottom: 5px;
-        padding: 0 5px;
-        gap: 4px;
+
+/* ===== MOBILE COMPLETE FIX V2 ===== */
+
+/* Video loading - prevent white screen */
+.content_with_gradient {
+    background-color: #000 !important;
+    min-height: 100vh;
+}
+
+.video_model {
+    background-color: #000;
+}
+
+/* Reposition everything for mobile */
+@media (max-width: 768px) {
+    li.carousel_container_li {
+        height: auto !important;
+        min-height: 100vh;
     }
     
-    .content_price_and_controllers {
-        padding: 4px 6px;
-        flex-wrap: wrap;
+    .model_and_pack_info {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        position: relative;
+    }
+    
+    .content_with_gradient {
+        flex: 1;
+        height: 55vh !important;
+        max-height: 55vh;
+        min-height: 55vh;
+        position: relative;
+    }
+    
+    .carousel_li_footbar {
+        position: relative !important;
+        bottom: auto !important;
+        padding: 12px 10px;
+        background: linear-gradient(to top, rgba(0,0,0,0.98) 0%, rgba(0,0,0,0.9) 100%);
+        width: 100%;
+        max-width: 100%;
+        gap: 8px;
+        flex-shrink: 0;
+    }
+    
+    /* Controls floating on right side of video */
+    .controls {
+        position: fixed !important;
+        bottom: 50%;
+        right: 10px;
+        transform: translateY(50%);
+        z-index: 100;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        background: rgba(0,0,0,0.6);
+        padding: 12px 8px;
+        border-radius: 30px;
+    }
+    
+    .controls i {
+        background-color: rgba(255,255,255,0.15) !important;
+        padding: 0 !important;
+        border-radius: 50% !important;
+        width: 45px;
+        height: 45px;
+        display: flex !important;
+        align-items: center;
         justify-content: center;
+        font-size: 18px !important;
+        color: white !important;
+    }
+    
+    /* Price button */
+    .content_price_and_controllers {
+        justify-content: center;
+        padding: 8px 5px;
     }
     
     .pack_price {
-        padding: 10px 20px;
-        font-size: 14px;
-        border-radius: 6px;
+        padding: 14px 40px;
+        font-size: 15px;
+        width: auto;
+        border-radius: 10px;
     }
     
+    /* Description compact */
     .description {
         width: 100%;
-        margin: 4px;
-        padding: 6px;
+        margin: 8px 0;
+        padding: 10px;
+        background-color: rgba(0,0,0,0.4);
+        border-radius: 10px;
     }
     
     .description p {
         font-size: 14px;
+        margin: 3px 0;
     }
     
+    /* Hide the bottom row with jump button */
     .div_buy_btn_and_dropdown {
-        padding: 4px 8px;
-        gap: 8px;
+        display: none !important;
     }
     
-    .controls {
-        gap: 5px;
-        font-size: 16px;
-    }
-    
-    .controls i {
-        padding: 8px 14px;
-        border-radius: 20px;
-        background-color: rgba(0,0,0,0.5);
-    }
-    
+    /* Jump button floating */
     .junp_to_carousel_tab {
-        width: 36px;
-        height: 36px;
-    }
-    
-    #backBtn {
-        width: 30px;
-        height: 30px;
-        font-size: 14px;
-    }
-    
-    .model_previewing_name {
-        font-size: 16px;
-    }
-    
-    .carousel_li_toolbar {
-        top: 8px;
-        left: 8px;
+        position: fixed !important;
+        bottom: 50%;
+        left: 10px;
+        transform: translateY(50%);
+        z-index: 100;
+        background: rgba(0,0,0,0.6) !important;
+        width: 45px !important;
+        height: 45px !important;
     }
 }
 
-@media (max-width: 360px) {
+/* Extra small phones */
+@media (max-width: 400px) {
+    .content_with_gradient {
+        height: 50vh !important;
+        max-height: 50vh;
+        min-height: 50vh;
+    }
+    
     .pack_price {
-        padding: 8px 16px;
-        font-size: 12px;
+        padding: 12px 30px;
+        font-size: 14px;
     }
     
     .description p {
@@ -325,7 +384,8 @@
     }
     
     .controls i {
-        padding: 6px 12px;
-        font-size: 14px;
+        width: 40px;
+        height: 40px;
+        font-size: 16px !important;
     }
 }
