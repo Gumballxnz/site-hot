@@ -130,22 +130,8 @@ video::-webkit-media-controls-download-button {
   </script>
 
 
-<script>
-// Proteções anti-clone
-document.addEventListener('contextmenu', e => e.preventDefault());
-document.addEventListener('selectstart', e => e.preventDefault());
-document.addEventListener('dragstart', e => e.preventDefault());
-document.addEventListener('keydown', e => {
-    if ((e.ctrlKey && ['s','c','u','a','p'].includes(e.key)) || e.key === 'F12' || (e.ctrlKey && e.shiftKey)) {
-        e.preventDefault();
-    }
-});
-document.querySelectorAll('video').forEach(v => {
-    v.setAttribute('controlsList', 'nodownload noplaybackrate');
-    v.setAttribute('disablePictureInPicture', 'true');
-    v.oncontextmenu = () => false;
-});
-</script>
+<!-- Anti-clone removed -->
 </body>
 
 </html>
+
