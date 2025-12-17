@@ -17,6 +17,191 @@
 
 <body>
 
+    <!-- Age Verification Modal -->
+    <div id="ageVerificationModal" class="age-modal-overlay">
+        <div class="age-modal-content">
+            <div class="age-modal-icon">
+                <i class="fas fa-exclamation-triangle"></i>
+            </div>
+            <h2>Verificação de Idade</h2>
+            <p>Este site contém conteúdo adulto destinado apenas para maiores de 18 anos.</p>
+            <p class="age-question">Você tem 18 anos ou mais?</p>
+            <div class="age-modal-buttons">
+                <button class="age-btn age-btn-yes" onclick="confirmAge()">
+                    <i class="fas fa-check"></i> Sim, tenho 18+
+                </button>
+                <button class="age-btn age-btn-no" onclick="denyAge()">
+                    <i class="fas fa-times"></i> Não, sou menor
+                </button>
+            </div>
+            <p class="age-warning">Ao entrar, você confirma que tem idade legal e aceita nossos termos.</p>
+        </div>
+    </div>
+
+    <style>
+        .age-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 99999;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        
+        .age-modal-overlay.hidden {
+            display: none;
+        }
+        
+        .age-modal-content {
+            background: linear-gradient(145deg, #1a1a2e 0%, #16213e 100%);
+            border-radius: 20px;
+            padding: 40px 30px;
+            max-width: 420px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            animation: modalSlideIn 0.5s ease-out;
+        }
+        
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-30px) scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+        
+        .age-modal-icon {
+            font-size: 60px;
+            color: #e50914;
+            margin-bottom: 20px;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        .age-modal-content h2 {
+            color: #fff;
+            font-size: 28px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .age-modal-content p {
+            color: #aaa;
+            font-size: 15px;
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+        
+        .age-question {
+            color: #fff !important;
+            font-size: 18px !important;
+            font-weight: 600;
+            margin: 25px 0 !important;
+        }
+        
+        .age-modal-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin: 25px 0;
+        }
+        
+        .age-btn {
+            padding: 16px 24px;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .age-btn-yes {
+            background: linear-gradient(135deg, #e50914 0%, #b20710 100%);
+            color: white;
+            box-shadow: 0 8px 25px rgba(229, 9, 20, 0.4);
+        }
+        
+        .age-btn-yes:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(229, 9, 20, 0.6);
+        }
+        
+        .age-btn-no {
+            background: rgba(255, 255, 255, 0.1);
+            color: #888;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .age-btn-no:hover {
+            background: rgba(255, 255, 255, 0.15);
+            color: #fff;
+        }
+        
+        .age-warning {
+            font-size: 12px !important;
+            color: #666 !important;
+            margin-top: 20px !important;
+        }
+        
+        @media (max-width: 480px) {
+            .age-modal-content {
+                padding: 30px 20px;
+            }
+            
+            .age-modal-content h2 {
+                font-size: 24px;
+            }
+            
+            .age-modal-icon {
+                font-size: 50px;
+            }
+        }
+    </style>
+
+    <script>
+        // Check if age was already verified
+        function checkAgeVerification() {
+            const verified = localStorage.getItem('ageVerified');
+            if (verified === 'true') {
+                document.getElementById('ageVerificationModal').classList.add('hidden');
+            }
+        }
+        
+        function confirmAge() {
+            localStorage.setItem('ageVerified', 'true');
+            document.getElementById('ageVerificationModal').classList.add('hidden');
+        }
+        
+        function denyAge() {
+            // Redirect to Google or another safe page
+            window.location.href = 'https://www.google.com';
+        }
+        
+        // Check on page load
+        document.addEventListener('DOMContentLoaded', checkAgeVerification);
+    </script>
+
+
     <div id="intro-animation">
         <div class="netflix-n"><span></span></div>
     </div>
