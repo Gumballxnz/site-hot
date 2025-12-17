@@ -314,170 +314,149 @@ html, body {
 }
 
 
-/* ===== ULTIMATE MOBILE FIX V5 ===== */
+/* ===== REPAIR FIX V4 - RESTORE CONTROLS & TEXT ===== */
 
-/* 1. HIDE ALL NATIVE VIDEO CONTROLS */
-video::-webkit-media-controls,
-video::-webkit-media-controls-enclosure,
-video::-webkit-media-controls-panel,
-video::-webkit-media-controls-play-button,
-video::-webkit-media-controls-start-playback-button,
-video::-webkit-media-controls-volume-slider,
-video::-webkit-media-controls-mute-button,
-video::-webkit-media-controls-timeline,
-video::-webkit-media-controls-current-time-display,
-video::-webkit-media-controls-time-remaining-display,
-video::-webkit-media-controls-fullscreen-button {
-    display: none !important;
-    -webkit-appearance: none !important;
-    opacity: 0 !important;
-    pointer-events: none !important;
-    width: 0 !important;
+/* 1. RESTORE CONTROLS CONTAINER */
+.div_buy_btn_and_dropdown {
+    display: block !important;
+    position: static !important;
     height: 0 !important;
+    width: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: visible !important;
 }
 
-/* 2. FORCE DARK BACKGROUND */
-html, body {
-    background-color: #000 !important;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden; /* Prevent horizontal scroll */
+/* 2. CONTROLS FLOATING ON TOP (Visible & Clickable) */
+.controls {
+    position: fixed !important;
+    bottom: 140px !important; /* Above text area */
+    right: 15px !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    z-index: 99999 !important;
+    display: flex !important;
+    flex-direction: column !important; /* Vertical stack like TikTok/Reels */
+    gap: 15px !important;
+    background: rgba(0, 0, 0, 0.6) !important;
+    padding: 10px !important;
+    border-radius: 50px !important;
+    border: 1px solid rgba(255,255,255,0.2) !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
 }
 
-/* 3. MOBILE LAYOUT STRUCTURE */
+.controls i {
+    font-size: 20px !important;
+    width: 45px !important;
+    height: 45px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: transparent !important;
+    color: white !important;
+    border: 1px solid rgba(255,255,255,0.1) !important;
+    border-radius: 50% !important;
+    margin: 0 !important;
+}
+
+/* 3. JUMP BUTTON (Left Side) */
+.junp_to_carousel_tab {
+    position: fixed !important;
+    bottom: 140px !important;
+    left: 15px !important;
+    top: auto !important;
+    z-index: 99999 !important;
+    display: flex !important;
+    background: rgba(0,0,0,0.6) !important;
+    width: 45px !important;
+    height: 45px !important;
+    border-radius: 50% !important;
+    align-items: center !important;
+    justify-content: center !important;
+    color: white !important;
+    border: 1px solid rgba(255,255,255,0.2) !important;
+}
+
+/* 4. TEXT & FOOTER VISIBILITY */
 @media (max-width: 768px) {
-    /* Main container takes full screen */
+    /* Main Layout */
     li.carousel_container_li {
         height: 100vh !important;
-        width: 100% !important;
-        display: flex;
-        flex-direction: column;
-        overflow: hidden; /* No scroll on main container */
-        background: #000;
-    }
-    
-    .model_and_pack_info {
-        display: flex;
-        flex-direction: column;
-        height: 100vh;
-        width: 100%;
-        position: relative;
-    }
-    
-    /* Top Bar (Name & Back) */
-    .carousel_li_toolbar {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        padding: 15px;
-        z-index: 20;
-        background: linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
-        display: flex;
-        align-items: center;
-    }
-    
-    /* Video Container - Takes available space exactly */
-    .content_with_gradient {
-        flex: 1; /* Grow to fill space */
-        width: 100%;
-        position: relative;
-        background: #000;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    
-    .video_model {
-        width: 100%;
-        height: 100%;
-        object-fit: contain; /* Show full video without crop */
-        background: #000;
-    }
-    
-    /* Bottom Info Panel - Fixed height at bottom */
-    .carousel_li_footbar {
-        position: relative !important;
-        bottom: 0 !important;
-        width: 100%;
-        background: #101010;
-        padding: 15px 15px 25px 15px; /* Extra padding bottom for safe area */
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        z-index: 20;
-        border-top: 1px solid #222;
-        box-shadow: 0 -5px 20px rgba(0,0,0,0.5);
-    }
-    
-    /* Buy Button - Prominent */
-    .pack_price {
-        background-color: #e50914;
-        width: 100%;
-        padding: 16px;
-        border-radius: 8px;
-        font-size: 16px;
-        font-weight: bold;
-        text-align: center;
-        margin: 0;
-        box-shadow: 0 4px 10px rgba(229, 9, 20, 0.4);
-    }
-    
-    /* Description Box */
-    .description {
-        background: #1a1a1a;
-        padding: 10px;
-        border-radius: 8px;
-        width: 100%;
-        margin: 0;
-    }
-    
-    .description p {
-        font-size: 13px;
-        color: #ccc;
-        margin: 2px 0;
-    }
-
-    /* CUSTOM CONTROLS - Floating over video */
-    .controls {
-        position: absolute !important;
-        bottom: 20px; /* Above the footer */
-        right: 15px;
-        top: auto !important; /* Reset top */
-        transform: none !important;
-        background: rgba(0,0,0,0.6);
-        border-radius: 50px;
-        padding: 8px 12px;
         display: flex !important;
-        flex-direction: row !important; /* Horizontal layout */
-        gap: 15px;
-        border: 1px solid rgba(255,255,255,0.1);
-    }
-    
-    .controls i {
-        font-size: 20px !important;
-        width: 40px !important;
-        height: 40px !important;
-        background: transparent !important;
+        flex-direction: column !important;
+        background: #000 !important;
     }
 
-    /* Jump Button - Floating over video left */
-    .junp_to_carousel_tab {
-        position: absolute !important;
-        bottom: 20px;
-        left: 15px;
-        top: auto !important;
-        transform: none !important;
-        z-index: 30;
+    .model_and_pack_info {
+        height: 100vh !important;
+        display: flex !important;
+        flex-direction: column !important;
     }
 
-    /* Hide unused elements */
-    .div_buy_btn_and_dropdown {
-        display: none !important;
+    /* Video Area */
+    .content_with_gradient {
+        flex: 1 !important; /* Take remaining space */
+        min-height: 0 !important; /* Allow shrinking if needed */
+        position: relative !important;
+        overflow: hidden !important;
     }
-    
+
+    /* Footer Area (Price + Text) */
+    .carousel_li_footbar {
+        flex-shrink: 0 !important; /* Don't shrink */
+        position: relative !important;
+        width: 100% !important;
+        background: #111 !important;
+        padding: 15px !important;
+        z-index: 100 !important;
+        border-top: 1px solid #222 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 10px !important;
+    }
+
+    /* Description Text Restoration */
+    .description {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        background: #1a1a1a !important;
+        padding: 10px !important;
+        border-radius: 8px !important;
+        margin-top: 5px !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+
+    .description p {
+        color: #ddd !important;
+        font-size: 14px !important;
+        margin: 2px 0 !important;
+        display: block !important;
+        text-align: left !important;
+    }
+
+    /* Buy Button */
     .content_price_and_controllers {
-        padding: 0;
-        width: 100%;
+        width: 100% !important;
+        display: flex !important;
+        justify-content: center !important;
+        padding: 0 !important;
+    }
+
+    .pack_price {
+        width: 100% !important;
+        text-align: center !important;
+        padding: 15px !important;
+        font-size: 16px !important;
+        border-radius: 8px !important;
+        background-color: #e50914 !important;
+        color: white !important;
     }
 }
+
+/* 5. NUKE NATIVE CONTROLS (Safety Check) */
+video::-webkit-media-controls { display: none !important; }
